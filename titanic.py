@@ -21,7 +21,7 @@ st.sidebar.header('User Input Features')
 #     input_df = pd.read_csv(uploaded_file)
 # else:
 def user_input_features():
-    sex = st.sidebar.selectbox('Sex',('male','female'))
+    sex = st.sidebar.selectbox('Gender',('male','female'))
     Pclass = st.sidebar.selectbox('Ticket Class',(1,2,3))
     Age = st.sidebar.slider('Age(years)', 0,100,28,1)
     alone = st.sidebar.selectbox('Travelling Alone?',('Yes','No'))
