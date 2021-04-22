@@ -5,17 +5,25 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+from PIL import Image
 
-st.write("""
-# Titanic App
-""")
+# Title
+st.title("Would you Survive Titanic?")
+# Introduction
+with open('introduction.txt') as f:
+  intro = f.readlines()
+st.write(intro[0])
 
-st.sidebar.header('User Input Features')
+image = Image.open('Image/jack and rose.jfif')
+st.image(image, caption='Jack and Rose')
+
+# Configuring Sidebar
+st.sidebar.header('Please enter your information!')
 
 def user_input_features():
     sex = st.sidebar.selectbox('Gender',('male','female'))
     Pclass = st.sidebar.selectbox('Ticket Class',(1,2,3))
-    Age = st.sidebar.slider('Age(years)', 0,100,28,1)
+    Age = st.sidebar.number_input('Age(years)', 0,100,28)
     alone = st.sidebar.selectbox('Travelling Alone?',('Yes','No'))
     data = {'Pclass': Pclass,
             'Sex': sex,                
@@ -23,35 +31,39 @@ def user_input_features():
             'Is_alone': alone}
     features = pd.DataFrame(data, index=[0])
     return features
-input_df = user_input_features()
 
+# Getting Input
+input_df = user_input_features()
+# Processing Input
 input_df['temp'] = 1
 input_df.loc[input_df['Is_alone'] == 'Yes', 'temp'] = 0
 input_df['Is_alone'] = input_df['temp']
 input_df.drop('temp',axis = 1,inplace= True)
 
-
 # Reads in saved classification model
 load_clf = pickle.load(open('tree.pkl', 'rb'))
+preprocessor = load_clf['preprocess'] # scaling and one-hot encoding
+tree = load_clf['tree_model']         # Classification model
 
-preprocessor = load_clf['preprocess']
-tree = load_clf['tree_model']
-
+# Prediction
 proc_feat = preprocessor.transform(input_df)
 result = tree.predict_proba(proc_feat)
 result = result[:,1]
 
-st.subheader('Prediction')
-st.write(f"You have a {result[0]*100:.2f}% chance of surviving Titanic!")
+# Prediction
+st.sidebar.header('Prediction')
+st.sidebar.write(f"*You have a **{result[0]*100:.2f}%** chance of surviving Titanic!*")
+# note < add flavour texts in the sidebar, looks better.
+# st.sidebar.write(f"You have a {result[0]*100:.2f}% chance of surviving Titanic!")
+# st.sidebar.write(f"You have a {result[0]*100:.2f}% chance of surviving Titanic!")
+# st.sidebar.write(f"You have a {result[0]*100:.2f}% chance of surviving Titanic!")
+# st.sidebar.write(f"You have a {result[0]*100:.2f}% chance of surviving Titanic!")
+# st.sidebar.write(f"You have a {result[0]*100:.2f}% chance of surviving Titanic!")
 
-# # Apply model to make predictions
-# prediction = load_clf.predict(df)
-# prediction_proba = load_clf.predict_proba(df)
 
-
-# st.subheader('Prediction')
-# penguins_species = np.array(['Adelie','Chinstrap','Gentoo'])
-# st.write(penguins_species[prediction])
-
-# st.subheader('Prediction Probability')
-# st.write(prediction_proba)
+# History Flavor Text
+st.subheader('History of Titanic')
+with open('description.txt') as f:
+  description = f.readlines()
+st.write(description[0])
+st.write(description[1])
