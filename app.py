@@ -3,11 +3,12 @@ import pandas as pd
 import numpy as np 
 
 st.set_page_config(
-    page_title = 'Streamlit Sample Dashboard Template',
+    page_title = 'Would you survive Titanic?',
     page_icon = '✅',
     layout = 'wide'
 )
 
+st.markdown('# Would you survive Titanic?')
 st.markdown("## KPI First Row")
 
 # kpi 1 

@@ -1,1 +1,1 @@
-# Titanic_Streamlit
+# Streamlit App for Titanic Dataset
