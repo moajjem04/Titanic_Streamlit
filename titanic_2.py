@@ -5,9 +5,17 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+from PIL import Image
 
 # Title
 st.title("Would you Survive Titanic?")
+# Introduction
+with open('introduction.txt') as f:
+  intro = f.readlines()
+st.write(intro[0])
+
+image = Image.open('Image/jack and rose.jfif')
+st.image(image, caption='Jack and Rose')
 
 # Configuring Sidebar
 st.sidebar.header('Please enter your information!')
@@ -43,12 +51,19 @@ result = tree.predict_proba(proc_feat)
 result = result[:,1]
 
 # Prediction
-st.subheader('Prediction')
-st.write(f"You have a {result[0]*100:.2f}% chance of surviving Titanic!")
+st.sidebar.header('Prediction')
+st.sidebar.write(f"*You have a **{result[0]*100:.2f}%** chance of surviving Titanic!*")
+# note < add flavour texts in the sidebar, looks better.
+# st.sidebar.write(f"You have a {result[0]*100:.2f}% chance of surviving Titanic!")
+# st.sidebar.write(f"You have a {result[0]*100:.2f}% chance of surviving Titanic!")
+# st.sidebar.write(f"You have a {result[0]*100:.2f}% chance of surviving Titanic!")
+# st.sidebar.write(f"You have a {result[0]*100:.2f}% chance of surviving Titanic!")
+# st.sidebar.write(f"You have a {result[0]*100:.2f}% chance of surviving Titanic!")
+
 
 # History Flavor Text
 st.subheader('History of Titanic')
 with open('description.txt') as f:
-  lines = f.readlines()
-st.write(lines[0])
-st.write(lines[1])
+  description = f.readlines()
+st.write(description[0])
+st.write(description[1])

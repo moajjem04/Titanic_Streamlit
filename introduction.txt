@@ -1,0 +1,1 @@
+Place yourself in the iconic **Titanic** ship and find out if you would have survived or not! On the left there is a sidebar where you can enter your information and a *Machine Learning* model will predict your chances of surviving.
