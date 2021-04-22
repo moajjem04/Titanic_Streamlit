@@ -1,4 +1,5 @@
-# D:\Python Projects\Titanic_Streamlit
+# D:
+# Python Projects\Titanic_Streamlit
 # env : titanic
 import streamlit as st
 import pandas as pd
@@ -11,15 +12,6 @@ st.write("""
 
 st.sidebar.header('User Input Features')
 
-# st.sidebar.markdown("""
-# [Example CSV input file](https://raw.githubusercontent.com/dataprofessor/data/master/penguins_example.csv)
-# """)
-
-# Collects user input features into dataframe
-# uploaded_file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
-# if uploaded_file is not None:
-#     input_df = pd.read_csv(uploaded_file)
-# else:
 def user_input_features():
     sex = st.sidebar.selectbox('Gender',('male','female'))
     Pclass = st.sidebar.selectbox('Ticket Class',(1,2,3))
