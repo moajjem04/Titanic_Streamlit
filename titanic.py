@@ -16,9 +16,14 @@ st.set_page_config(
 # Title
 st.title("Would you Survive Titanic?")
 # Introduction
-with open('introduction.txt') as f:
+with open('Flavour Texts/introduction.txt') as f:
   intro = f.readlines()
-st.write("")
+
+st.write('''
+
+
+
+''')
 st.write(intro[0])
 
 image = Image.open('Image/jack and rose.jfif')
@@ -68,7 +73,7 @@ st.sidebar.write(f"*You have a **{result[0]*100:.2f}%** chance of surviving Tita
 
 # History Flavor Text
 st.header('History of Titanic')
-with open('description.txt') as f:
+with open('Flavour Texts/description.txt') as f:
   description = f.readlines()
 st.write(description[0])
 st.write(description[1])
