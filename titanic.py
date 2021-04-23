@@ -72,10 +72,10 @@ st.sidebar.write(f"*You have a **{result[0]*100:.2f}%** chance of surviving Tita
 # st.sidebar.write(f"You have a {result[0]*100:.2f}% chance of surviving Titanic!")
 
 # Jack and Rose Details
-jack = {'Pclass': 3,
+jack = {'Pclass': 1,
           'Sex': 'male',                
           'Age': 20,
-          'Is_alone': 1}
+          'Is_alone': 0}
 
 rose = {'Pclass': 1,
           'Sex': 'female',                
@@ -84,6 +84,19 @@ rose = {'Pclass': 1,
 
 jack_df = pd.DataFrame(jack, index=[0])
 rose_df = pd.DataFrame(rose, index=[0])
+
+jack_pred = predict_result(jack_df)
+rose_pred = predict_result(rose_df)
+
+# Jack's prediction
+with col1:
+  with st.beta_expander("See Jack's result!"):
+    st.write(jack_pred[0])
+
+# Rose's prediction
+with col2:
+  with st.beta_expander("See Rose's result!"):
+    st.write(rose_pred[0])
 
 # History Flavor Text
 st.header('History of Titanic')
