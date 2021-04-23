@@ -29,7 +29,7 @@ intro = load_text('Flavour Texts/introduction.txt')
 
 st.header("")
 st.write(intro[0])
-col1, col2 = st.beta_columns(2)
+col1, _, col2 = st.beta_columns([5,1,5]) # middle column for gap
 
 image = Image.open('Image/jack and rose.jfif')
 st.image(image, caption='Jack and Rose')
@@ -72,9 +72,32 @@ def predict_result(data_df):
   return res
 
 result = predict_result(input_df)
-# Prediction
-st.sidebar.header('Prediction')
-st.sidebar.write(f"*You have a **{result[0]*100:.2f}%** chance of surviving Titanic!*")
+# Prediction Flavour Texts
+
+# Prediction Sidebar
+st.sidebar.markdown('# **Prediction**')
+# st.sidebar.write(f"*You have a **{result[0]*100:.2f}%** chance of surviving Titanic!*")
+if result[0] >= 0.8:
+  st.sidebar.write(
+    f"*Congrats! You have a **{result[0]*100:.2f}%** chance of surviving Titanic!*"
+    " *You should probably get that time machine ready now.*"
+    )
+elif result[0]> 0.5:
+  st.sidebar.write(
+    f"*Well, it looks like you have a good chance(**{result[0]*100:.2f}%**) of surviving Titanic.*"
+    " *Perhaps you need the blessings of Lady Luck.*"
+    )
+elif result[0]>= 0.1:
+  st.sidebar.write(
+    f"*Ummm... you would probably drown with a probability of just **{result[0]*100:.2f}%**.*"
+    " *I guess watching Titanic from the safety of your couch is the best bet*."
+    )
+else:
+  st.sidebar.write(
+    "*It is a good thing that we are not in 1912.*"
+    f" *You have a very low chance of **{result[0]*100:.2f}% ** making it out of Titanic.*"
+    )     
+
 # note < add flavour texts in the sidebar, looks better.
 # st.beta_expander <- use this for extra details
 # st.sidebar.write(f"You have a {result[0]*100:.2f}% chance of surviving Titanic!")
