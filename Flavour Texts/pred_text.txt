@@ -1,1 +1,0 @@
-*You have a **{result[0]*100:.2f}%** chance of surviving Titanic!*
