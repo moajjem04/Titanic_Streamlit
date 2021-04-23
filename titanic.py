@@ -64,10 +64,6 @@ st.sidebar.write(f"*You have a **{result[0]*100:.2f}%** chance of surviving Tita
 # note < add flavour texts in the sidebar, looks better.
 # st.beta_expander <- use this for extra details
 # st.sidebar.write(f"You have a {result[0]*100:.2f}% chance of surviving Titanic!")
-# st.sidebar.write(f"You have a {result[0]*100:.2f}% chance of surviving Titanic!")
-# st.sidebar.write(f"You have a {result[0]*100:.2f}% chance of surviving Titanic!")
-# st.sidebar.write(f"You have a {result[0]*100:.2f}% chance of surviving Titanic!")
-# st.sidebar.write(f"You have a {result[0]*100:.2f}% chance of surviving Titanic!")
 
 
 # History Flavor Text
