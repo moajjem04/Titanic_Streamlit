@@ -21,6 +21,7 @@ with open('Flavour Texts/introduction.txt') as f:
 
 st.header("")
 st.write(intro[0])
+col1, col2 = st.beta_columns(2)
 
 image = Image.open('Image/jack and rose.jfif')
 st.image(image, caption='Jack and Rose')
@@ -55,10 +56,14 @@ preprocessor = load_clf['preprocess'] # scaling and one-hot encoding
 tree = load_clf['tree_model']         # Classification model
 
 # Prediction
-proc_feat = preprocessor.transform(input_df)
-result = tree.predict_proba(proc_feat)
-result = result[:,1]
+def predict_result(data_df):
+  proc_feat = preprocessor.transform(data_df)
+  res = tree.predict_proba(proc_feat)
+  res = res[:,1]
 
+  return res
+
+result = predict_result(input_df)
 # Prediction
 st.sidebar.header('Prediction')
 st.sidebar.write(f"*You have a **{result[0]*100:.2f}%** chance of surviving Titanic!*")
@@ -66,6 +71,19 @@ st.sidebar.write(f"*You have a **{result[0]*100:.2f}%** chance of surviving Tita
 # st.beta_expander <- use this for extra details
 # st.sidebar.write(f"You have a {result[0]*100:.2f}% chance of surviving Titanic!")
 
+# Jack and Rose Details
+jack = {'Pclass': 3,
+          'Sex': 'male',                
+          'Age': 20,
+          'Is_alone': 1}
+
+rose = {'Pclass': 1,
+          'Sex': 'female',                
+          'Age': 18,
+          'Is_alone': 1}
+
+jack_df = pd.DataFrame(jack, index=[0])
+rose_df = pd.DataFrame(rose, index=[0])
 
 # History Flavor Text
 st.header('History of Titanic')
