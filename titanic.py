@@ -100,12 +100,18 @@ j_and_r = load_text('Flavour Texts/jack and rose.txt')
 # Jack's prediction
 with col1:
   with st.beta_expander("See Jack's result!"):
-    st.write(jack_pred[0])
+    st.write(j_and_r[0])
+    st.write(f'''
+    Our model predicts that Jack had a **{jack_pred[0]*100:.2f}%** chance of surviving the shipwreck.
+    ''')
 
 # Rose's prediction
 with col2:
   with st.beta_expander("See Rose's result!"):
-    st.write(rose_pred[0])
+    st.write(j_and_r[1])
+    st.write(f'''
+    Our model predicts that Rose had a **{rose_pred[0]*100:.2f}%** chance of not dying in Titanic.
+    ''')
 
 # History Flavor Text
 st.header('**History of Titanic**')
