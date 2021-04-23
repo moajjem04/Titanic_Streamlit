@@ -7,6 +7,15 @@ import numpy as np
 import pickle
 from PIL import Image
 # https://emojipedia.org for emoji links
+
+def load_text(path):
+  '''
+  Wrapper function to load flavour texts
+  '''
+  with open(path) as f:
+    texts = f.readlines()
+  return texts
+
 st.set_page_config(
     page_title="Survive Titanic!",
     page_icon=":ocean:",
@@ -16,8 +25,7 @@ st.set_page_config(
 # Title
 st.title("Would you Survive Titanic?")
 # Introduction
-with open('Flavour Texts/introduction.txt') as f:
-  intro = f.readlines()
+intro = load_text('Flavour Texts/introduction.txt')
 
 st.header("")
 st.write(intro[0])
@@ -99,9 +107,9 @@ with col2:
     st.write(rose_pred[0])
 
 # History Flavor Text
-st.header('History of Titanic')
+st.header('**History of Titanic**')
 st.write("")
-with open('Flavour Texts/description.txt') as f:
-  description = f.readlines()
+
+description = load_text('Flavour Texts/description.txt')
 st.write(description[0])
 st.write(description[1])
