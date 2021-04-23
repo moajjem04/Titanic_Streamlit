@@ -95,7 +95,8 @@ rose_df = pd.DataFrame(rose, index=[0])
 
 jack_pred = predict_result(jack_df)
 rose_pred = predict_result(rose_df)
-
+# Load Jack and Rose Flavour text
+j_and_r = load_text('Flavour Texts/jack and rose.txt')
 # Jack's prediction
 with col1:
   with st.beta_expander("See Jack's result!"):
