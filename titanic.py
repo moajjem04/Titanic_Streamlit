@@ -143,3 +143,5 @@ st.write("")
 description = load_text('Flavour Texts/description.txt')
 st.write(description[0])
 st.write(description[1])
+
+st.markdown("\n\n\nThe source code for this app can be found in [this github repo](https://github.com/moajjem04/Titanic_Streamlit)")
