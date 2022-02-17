@@ -5,6 +5,9 @@ Here is the [streamlit app](https://survive-titanic.herokuapp.com) deployed in H
 
 [//]: # (heroku link - https://survive-titanic.herokuapp.com)
 
+|![Main Screen](Image/home%20screen.PNG?raw=true)|
+|:--:|
+|**The home screen of the webapp.**|
 ---
 
 Bring out the time machine and travel back to 1912! 
@@ -16,7 +19,7 @@ The machine learning model was trained in [this](https://www.kaggle.com/moajjem0
 
 The aim of this project is to make a webapp using [Streamlit](https://survive-titanic.herokuapp.com) and deploy it in [Heroku](https://www.heroku.com).
 
-This is why only four features are chosen for the machine learning model to learn:
+This is why only **four features** are chosen for the machine learning model to learn:
 
 1. `Pclass` (*Ticket Class*) : This variable denotes the class of the ticket for Titanic ship. The options are `1st Class`, `2nd Class` and `3rd Class`.
 2. `Sex` : This indicates the sex of the person boarding the ship. The options are `male` and `female`.
@@ -37,9 +40,7 @@ Do check out the [app](https://survive-titanic.herokuapp.com) and have fun with 
 ---
 
 # Some Screenshots from the app
-|![Main Screen](Image/home%20screen.PNG?raw=true)|
-|:--:|
-|**The home screen of the webapp.**|
+
 
 |![Results for Jack and Rose](Image/jack_rose_result.PNG?raw=true)|
 |:--:|
