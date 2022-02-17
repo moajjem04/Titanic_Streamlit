@@ -30,4 +30,8 @@ Do check out the [app](https://survive-titanic.herokuapp.com) and have fun with 
 
 p.s. Not liable if you drown in Titanic despite the model's prediction. :sweat_smile:
 
+---
+
+# Some Screenshots of the app
+![alt text](Image/ML.png?raw=true)
 
