@@ -26,9 +26,13 @@ This is why only four features are chosen for the machine learning model to lear
 The features were carefully chosen so that the user does not have any security concerns. 
 To my best knowledge, no data is collected via this app.
 
+Huge shout out to [Data Professor](https://www.youtube.com/c/DataProfessor) for his [video](https://youtu.be/zK4Ch6e1zq8) on how to deploy machine learning models to Heroku.
+
+I would appreciate any feedback regarding this project.
+
 Do check out the [app](https://survive-titanic.herokuapp.com) and have fun with it!
 
-p.s. Not liable if you drown in Titanic despite the model's prediction. :sweat_smile:
+*p.s. Not liable if you drown in Titanic despite the model's prediction. :sweat_smile:*
 
 ---
 
