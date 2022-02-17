@@ -32,6 +32,16 @@ p.s. Not liable if you drown in Titanic despite the model's prediction. :sweat_s
 
 ---
 
-# Some Screenshots of the app
-![alt text](Image/ML.png?raw=true)
+# Some Screenshots from the app
+|![Main Screen](Image/home%20screen.PNG?raw=true)|
+|:--:|
+|**The home screen of the webapp.**|
+
+|![Results for Jack and Rose](Image/jack_rose_result.PNG?raw=true)|
+|:--:|
+|**Predictions by the model on the chances of survival for Jack and Rose.**|
+
+|![Model taking input](Image/ML.PNG?raw=true)|
+|:--:|
+|**Taking Inputs for the model to make predictions on.**|
 
