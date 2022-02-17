@@ -23,7 +23,7 @@ This is why only four features are chosen for the machine learning model to lear
 3. `Age` : This variable is the age of the person in years. Only integer values are accepted and this ranges from `0` to `100`.
 4. `Is_alone` : This variable denotes whether the person is travelling alone or not. The options are simply `Yes` and `No`.
 
-The features were carefully chosen so that the user does not has any security concern. 
+The features were carefully chosen so that the user does not have any security concerns. 
 To my best knowledge, no data is collected via this app.
 
 Do check out the [app](https://survive-titanic.herokuapp.com) and have fun with it!
