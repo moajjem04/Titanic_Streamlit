@@ -15,7 +15,7 @@ Go on Titanic's maiden voyage and see if you would survive its *titanic* crash.
 
 This [app](https://survive-titanic.herokuapp.com) uses a Decision Tree trained on the [Titanic Dataset](https://www.kaggle.com/c/titanic) to predict whether you will survive or not.
 
-The machine learning model was trained in [this](https://www.kaggle.com/moajjem04/titanic-streamlit) Kaggle Notebook.
+The machine learning model was trained in [this](titanic-streamlit.ipynb) Kaggle Notebook.
 
 The aim of this project is to make a webapp using [Streamlit](https://survive-titanic.herokuapp.com) and deploy it in [Heroku](https://www.heroku.com).
 
