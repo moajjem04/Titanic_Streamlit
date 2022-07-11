@@ -32,7 +32,7 @@ st.write(intro[0])
 col1, _, col2 = st.beta_columns([5,1,5]) # middle column for gap
 
 image = Image.open('Image/jack and rose.jfif')
-st.image(image, caption='The iconinc scene of Jack and Rose')
+st.image(image, caption='The iconic scene of Jack and Rose')
 
 # Configuring Sidebar
 st.sidebar.header('Please enter your information!')
