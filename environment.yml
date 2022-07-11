@@ -1,0 +1,9 @@
+name: titanic
+channels:
+  - conda-forge
+  - anaconda
+dependencies:
+  - streamlit==0.80.0
+  - pandas==1.2.4
+  - numpy==1.20.2
+  - scikit-learn==0.24.1
